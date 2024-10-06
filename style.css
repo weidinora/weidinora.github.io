@@ -1,0 +1,140 @@
+/* Alapértelmezett stílus mobil nézetre */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+main {
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+/* Stílusok nagyobb képernyőkre (min-width: 768px) */
+@media (min-width: 768px) {
+    nav ul {
+        text-align: left;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    main {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+
+    main section {
+        width: 45%;
+    }
+
+    footer {
+        padding: 20px;
+    }
+}
+
+/* Stílusok asztali gépekre (min-width: 1024px) */
+@media (min-width: 1024px) {
+    body {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin-right: 20px;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+/*Reszponzív képek*/
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*Reszponzív tipográfia*/
+body {
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 2rem; /* 32px */
+}
+
+p {
+    font-size: 1rem; /* 16px */
+}
+
+/*Flexbox*/
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item {
+    flex: 1 1 100%;
+    margin: 10px;
+}
+
+@media (min-width: 768px) {
+    .item {
+        flex: 1 1 48%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .item {
+        flex: 1 1 30%;
+    }
+}
