@@ -1,21 +1,79 @@
 /* Alapértelmezett stílus mobil nézetre */
 * {
-    margin: 0;
-    padding: 0;
+    margin: 1%;
+    padding: 1%;
     box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 body {
-    font-family: Arial, sans-serif;
     line-height: 1.6;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
+    background-image: url('ocean2.jpg'); 
+    background-size: cover; /* A kép méretének illesztése a képernyőhöz */
+    background-position: center; /* Középre igazítva */
+    background-attachment: fixed; /* A háttérkép fixen marad, amikor görgetsz */
+    background-repeat: no-repeat; /* Nem ismétlődik a kép */
 }
 
 header {
     text-align: center;
-    background-color: #333;
+    background-color: #657483ad;
+    color: #182532;
+    padding: 5px;
+    padding-top: 10px;
+    height: 5%;
+    line-height: 1,2px;
+}
+
+/* Hero szekció stílusa */
+.hero {
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #3f4c59f3;
     color: #fff;
-    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Mobilon egymás alatt */
+    padding: 50px 20px;
+}
+
+.hero .profile-img {
+    border-radius: 5%; /* Sarok kerekítés */
+    width: 100%;
+    max-width: 300px; /* Maximum szélesség */
+    height: auto; /* Magasság automatikusan igazodik */
+    margin-right: 15px; /* Térköz a szöveg és a kép között */
+    margin-bottom: 20px;
+    width: 230px; /* Kép mérete */
+    height: auto; /* Arányok megőrzése */
+    top: 0%;
+    filter: grayscale(100%); /* 100%-os szürkeárnyalat */
+    object-fit: cover; /* Kép arányainak megőrzése, vágással */
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+h1 {
+    font-variant: small-caps;
+    padding: 0;
+    margin: 0;
+    letter-spacing: 2px;
 }
 
 nav ul {
@@ -31,7 +89,11 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    letter-spacing: 1px;
+    color: #0c1219;
+    font-size: larger;
+    font-weight: bolder;
+
 }
 
 main {
@@ -41,9 +103,42 @@ main {
 footer {
     text-align: center;
     margin-top: 20px;
-    background-color: #333;
-    color: white;
+    background-color: #182532;
+    color: #c9d9eae0;
     padding: 10px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #182532;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #242f3a;
+}
+
+/* Reszponzív stílus (mobilhoz optimalizálva) */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero .profile-img {
+        margin-bottom: 20px;
+        margin-right: 0;
+        width: 230px;
+        height: auto;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
 }
 
 /* Stílusok nagyobb képernyőkre (min-width: 768px) */
@@ -69,6 +164,23 @@ footer {
 
     footer {
         padding: 20px;
+    }
+    .hero {
+        flex-direction: row; /* Kép és szöveg egymás mellé kerül */
+        justify-content: flex-start; /* Balra igazítva */
+        text-align: left; /* Szöveg balra igazítva */
+        padding: 60px;
+    }
+
+    .hero .profile-img {
+        width: 450px; /* Nagyobb szélesség asztali nézetben */
+        height: auto;
+        margin-right: 30px; /* Térköz a kép és a szöveg között */
+        margin-bottom: 0; /* Alsó margó eltávolítása */
+    }
+
+    .hero-text {
+        max-width: 600px; /* Szöveg szélessége */
     }
 }
 
@@ -120,6 +232,11 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Fehér háttér enyhén áttetszően, hogy a szöveg jól olvasható legyen */
+    padding: 20px;
+    margin: 40px; /* Térköz a tartalom és az oldal szélei között, ahol a háttérkép látszik */
+    border-radius: 10px; /* Lekerekített sarkok a szebb megjelenéshez */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Árnyék a tartalom doboz körül */
 }
 
 .item {
