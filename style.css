@@ -119,7 +119,8 @@ footer {
 }
 
 .btn:hover {
-    background-color: #242f3a;
+    background-color: #c9d9eae0;
+    color: #182532;
 }
 
 /* Reszponzív stílus (mobilhoz optimalizálva) */

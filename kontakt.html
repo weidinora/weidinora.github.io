@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapcsolatfelvételi Űrlap</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            padding: 20px;
+            background-color: #3f4c59f3;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-variant: small-caps;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 93%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #182532;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Times New Roman', Times, serif;
+            font-variant: small-caps;
+        }
+
+        textarea {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: small;
+        }
+
+        input {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: small;
+        }
+
+        .contact-form button:hover {
+            background-color: #c9d9eae0;
+            color:#182532
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contact-form">
+        <h2>Kapcsolatfelvétel</h2>
+        <form id="contactForm" method="POST">
+            <label for="name">Név</label>
+            <input type="text" id="name" name="name" placeholder="Add meg a neved" required>
+
+            <label for="email">Email cím</label>
+            <input type="email" id="email" name="email" placeholder="Add meg az email címed" required>
+
+            <label for="message">Üzenet</label>
+            <textarea id="message" name="message" placeholder="Írd meg az üzeneted" required></textarea>
+
+            <button type="submit">Küldés</button>
+        </form>
+        <p id="status"></p> <!-- Az űrlap állapotát fogja mutatni -->
+    </div>
+
+    <script>
+        // Egyszerű JavaScript az űrlap elküldéséhez
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Megakadályozza az űrlap alapértelmezett elküldését
+
+            let formData = new FormData(this);
+            fetch('https://example.com/submit-form', { // Backend URL-re mutat
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').textContent = "Az üzeneted sikeresen elküldve!";
+            })
+            .catch(error => {
+                document.getElementById('status').textContent = "Hiba történt az üzenet elküldésekor.";
+            });
+        });
+    </script>
+
+</body>
+</html>
