@@ -10,11 +10,12 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-image: url('ocean2.jpg'); 
+    background-image: url('ocean1.jpg');
     background-size: cover; /* A kép méretének illesztése a képernyőhöz */
     background-position: center; /* Középre igazítva */
     background-attachment: fixed; /* A háttérkép fixen marad, amikor görgetsz */
     background-repeat: no-repeat; /* Nem ismétlődik a kép */
+    background-color: #0c1219f2;
 }
 
 header {
@@ -62,7 +63,7 @@ header {
 
 .hero-text p {
     font-size: 1.2rem;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     padding-left: 0;
     padding-right: 0;
     margin-left: 0;
@@ -90,7 +91,7 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     letter-spacing: 1px;
-    color: #0c1219;
+    color: #e5ebf1e0;
     font-size: larger;
     font-weight: bolder;
 
@@ -98,6 +99,8 @@ nav ul li a {
 
 main {
     margin-top: 20px;
+    color: #e5ebf1e0;
+    background-color: #0b131bcf;
 }
 
 footer {
@@ -160,7 +163,7 @@ footer {
     }
 
     main section {
-        width: 45%;
+        width: 90%;
     }
 
     footer {
@@ -204,7 +207,7 @@ footer {
 
     main {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 20px;
     }
 }
